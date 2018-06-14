@@ -38,7 +38,7 @@ return [
 	'google' => [
         'client_id' => '937733730410-oi3ck8dtfi9neklitdr3rlmhp52laarp.apps.googleusercontent.com',
         'client_secret' => 'vnqZ7DedvCdOclv2b-gsands',
-        'redirect' => 'http://localhost/library/public/auth/google/callback',
+        'redirect' => 'https://booklibmaster.herokuapp.com/auth/google/callback',
     ],
 
 ];
