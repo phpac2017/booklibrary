@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('google', function () {
+    return view('googleAuth');
+});
+
 Route::resource('crud', 'CRUDController');
 
 Auth::routes();
