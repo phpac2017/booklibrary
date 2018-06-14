@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
+use Auth;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -56,7 +59,7 @@ class LoginController extends Controller
 	
 	public function createUser($user)
     {
-        $authUser = User::where('google_id', $user->id)->user();
+        $authUser = User::where('google_id', $user->id)->first();
 		if($authUser){
 			return $authUser;
 		}
