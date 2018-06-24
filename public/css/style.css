@@ -1,6 +1,6 @@
-.header_title{
+.header_title {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 75px;
 }
 .gallery{
     text-align: center;
@@ -23,4 +23,13 @@
 .err_bg {
     color:#ff0000;
     text-align: center;
+}
+
+.menu {
+    float: left;
+    display: block;
+    margin-left: 400px;
+}
+.menu a {
+    margin-right: 10px;
 }

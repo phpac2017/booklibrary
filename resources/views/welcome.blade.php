@@ -9,7 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/lib.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -25,12 +26,6 @@
                 height: 100vh;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
             .position-ref {
                 position: relative;
             }
@@ -39,6 +34,7 @@
                 position: absolute;
                 right: 10px;
                 top: 18px;
+                background: #34d240;
             }
 
             .content {
@@ -47,12 +43,15 @@
 
             .title {
                 font-size: 84px;
+                color: #e0ef09;
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
+                color: #fff;
+                padding: 0 30px;
+                /* height: 35px; */
+                text-align: center;
+                vertical-align: middle;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -79,15 +78,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Book Library Application
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ url('/crud') }}" class="btn btn-success go_home">Books List</a>
+                    <a href="{{ url('/live_search') }}" class="btn btn-danger go_home">Books Search</a>
+                    <a href="{{ url('/mylist') }}" class="btn btn-warning go_home">My Books</a>
+                    <a href="{{ url('/crud/create') }}" class="btn btn-info go_home">Add New Book</a>
+                    <a href="https://github.com/phpac2017/booklibrary" target="_blank" class="btn btn-primary go_home">GitHub (Source Code)</a>
                 </div>
             </div>
         </div>

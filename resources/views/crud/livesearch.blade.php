@@ -9,11 +9,13 @@
 <body>
 	<br />
 	<div class="container box">
-		<a href="{{ url('/crud') }}" class="btn btn-danger go_home">Books List</a><br/><br/>
-		<a href="{{ url('/crud/show') }}" class="btn btn-success go_home">Books Gallery</a><br/><br/>
-		<a href="{{ url('/mylist') }}" class="btn btn-warning go_home">My Books</a><br/><br/>
-		<a href="{{ url('/crud/create') }}" class="btn btn-info go_home">Add New Book</a><br/><br/>
-		<a href="{{ url('/') }}" class="btn btn-primary go_home">Go Main</a>
+		<div class ="menu">
+			<a href="{{ url('/crud') }}" class="btn btn-danger go_home">Books List</a>
+			<a href="{{ url('/crud/show') }}" class="btn btn-success go_home">Books Gallery</a>
+			<a href="{{ url('/mylist') }}" class="btn btn-warning go_home">My Books</a>
+			<a href="{{ url('/crud/create') }}" class="btn btn-info go_home">Add New Book</a>
+			<a href="{{ url('/') }}" class="btn btn-primary go_home">Go Main</a>
+		</div>
 		<h3 align="center">Live Book search using AJAX</h3><br />
 		<div class="panel panel-default">
 			<div class="panel-heading">Search Books Data</div>

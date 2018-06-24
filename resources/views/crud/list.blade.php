@@ -2,11 +2,13 @@
 
 @extends('master')
 @section('content')  
-<a href="{{ url('/crud') }}" class="btn btn-success go_home">Books List</a><br/><br/>
-<a href="{{ url('/live_search') }}" class="btn btn-danger go_home">Books Search</a><br/><br/>
-<a href="{{ url('/mylist') }}" class="btn btn-warning go_home">My Books</a><br/><br/>
-<a href="{{ url('/crud/create') }}" class="btn btn-info go_home">Add New Book</a><br/><br/>
-<a href="{{ url('/') }}" class="btn btn-primary go_home">Go Main</a>
+<div class ="menu">
+	<a href="{{ url('/crud') }}" class="btn btn-success go_home">Books List</a>
+	<a href="{{ url('/live_search') }}" class="btn btn-danger go_home">Books Search</a>
+	<a href="{{ url('/mylist') }}" class="btn btn-warning go_home">My Books</a>
+	<a href="{{ url('/crud/create') }}" class="btn btn-info go_home">Add New Book</a>
+	<a href="{{ url('/') }}" class="btn btn-primary go_home">Go Main</a>
+</div>
 <?php if(count($books) > 0){?>
 <div class="container">		
 	<h2 class="header_title"> Books Gallery </h2> 
