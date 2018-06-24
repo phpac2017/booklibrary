@@ -42,8 +42,8 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '220778125204636',
-        'client_secret' => 'f094f3ea7f18d769441aad119770c489',
+        'client_id' => '637254249952950',
+        'client_secret' => 'f2472b48a668d3623e18f9f9276cc473',
         'redirect' => 'https://booklibmaster.herokuapp.com/auth/facebook/callback',
     ],
 
