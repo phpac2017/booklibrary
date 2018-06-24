@@ -1,6 +1,12 @@
 <!-- create.blade.php -->
 @extends('master')
 @section('content')
+<div class ="menu">
+	<a href="{{ url('/crud/show') }}" class="btn btn-success go_home">Books Gallery</a>
+	<a href="{{ url('/live_search') }}" class="btn btn-danger go_home">Books Search</a>
+	<a href="{{ url('/mylist') }}" class="btn btn-warning go_home">My Books</a>
+	<a href="{{ url('/') }}" class="btn btn-primary go_home">Go Main</a>
+</div>
 <div class="container">
 <h2 class="header_title"> Add New Book </h2>
 <form method="post" action="{{url('crud')}}" enctype="multipart/form-data">
