@@ -57,7 +57,7 @@
 								<a href="{{ url('auth/google') }}" class="btn btn-danger">
 									<strong>Login With Google</strong>
                                 </a>
-                                <a href="{{ url('auth/facebook') }}" class="btn btn-lg btn-primary">
+                                <a href="{{ url('auth/facebook') }}" class="btn btn-success">
                                     <strong>Login With Facebook</strong>
                                 </a>   
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
