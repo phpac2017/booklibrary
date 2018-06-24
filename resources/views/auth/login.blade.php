@@ -56,7 +56,10 @@
                                 </button>
 								<a href="{{ url('auth/google') }}" class="btn btn-danger">
 									<strong>Login With Google</strong>
-								</a>
+                                </a>
+                                <a href="{{ url('auth/facebook') }}" class="btn btn-lg btn-primary">
+                                    <strong>Login With Facebook</strong>
+                                </a>   
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>

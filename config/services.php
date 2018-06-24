@@ -41,4 +41,10 @@ return [
         'redirect' => 'https://booklibmaster.herokuapp.com/auth/google/callback',
     ],
 
+    'facebook' => [
+        'client_id' => '220778125204636',
+        'client_secret' => 'f094f3ea7f18d769441aad119770c489',
+        'redirect' => 'https://booklibmaster.herokuapp.com/auth/facebook/callback',
+    ],
+
 ];

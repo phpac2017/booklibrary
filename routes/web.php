@@ -26,8 +26,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('auth/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
 Route::get('mylist', 'CRUDController@mylist');
 Route::get('addToCatalogue/{id}', 'CRUDController@addToCatalogue');
-Route::get('auth/google/callback', 'Auth\LoginController@handleGoogleCallback');
 Route::get('live_search', 'CRUDController@liveSearch');
 Route::get('live_search/action', 'CRUDController@action')->name('live_search.action');   

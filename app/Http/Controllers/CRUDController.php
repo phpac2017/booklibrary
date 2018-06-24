@@ -24,7 +24,7 @@ class CRUDController extends Controller
 			$user_id = Auth::user()->id;
 			return view('crud.index', compact('cruds','user_id'));
 		}else{
-			return redirect('/');
+			return redirect('/login');
 		}
     }
 
@@ -35,7 +35,11 @@ class CRUDController extends Controller
      */
     public function create()
     {
-        return view('crud.create');
+        if(Auth::user()){
+            return view('crud.create');
+        }else{
+            return redirect('/login');
+        }
     }
 
     /**
@@ -88,7 +92,7 @@ class CRUDController extends Controller
 			$user_id = Auth::user()->id;
 			return view('crud.list', compact('books','id','user_id'));
 		}else{
-			return redirect('/');
+			return redirect('/login');
 		}
     }
 
@@ -100,10 +104,12 @@ class CRUDController extends Controller
      */
     public function edit($id)
     {
-        $crud = Crud::find($id);
-
-        return view('crud.edit', compact('crud','id'));
-
+        if(Auth::user()){
+            $crud = Crud::find($id);
+            return view('crud.edit', compact('crud','id'));
+        }else{
+			return redirect('/login');
+		}
     }
 
     /**
@@ -148,9 +154,13 @@ class CRUDController extends Controller
      */
     public function destroy($id)
     {
-      $crud = Crud::find($id);
-      $crud->delete();
-      return redirect('/crud');
+        if(Auth::user()){
+            $crud = Crud::find($id);
+            $crud->delete();
+            return redirect('/crud');
+        }else{
+            return redirect('/login');
+        }
     }
 	
 	/**

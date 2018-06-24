@@ -44,6 +44,11 @@ class LoginController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
+
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
 	
 	public function handleGoogleCallback()
     {
@@ -56,6 +61,18 @@ class LoginController extends Controller
 		Auth::login($authUser, true);
 		return redirect()->route('home');        
     }
+
+    public function handleFacebookCallback()
+    {
+        try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('auth/facebook');
+        }
+        $authUser = $this->createFBUser($user);
+        Auth::login($authUser, true);
+        return redirect()->route('home'); 
+    }
 	
 	public function createUser($user)
     {
@@ -67,6 +84,19 @@ class LoginController extends Controller
             'name' => $user->name,
             'email' => $user->email,
             'google_id' => $user->id,
+        ]);
+    }
+
+    public function createFBUser($user)
+    {
+        $authUser = User::where('facebook_id', $user->id)->first();
+		if($authUser){
+			return $authUser;
+		}
+		return User::create([
+            'name' => $user->name,
+            'email' => $user->email,
+            'facebook_id' => $user->id,
         ]);
     }
 }
